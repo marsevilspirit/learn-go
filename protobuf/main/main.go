@@ -2,6 +2,8 @@ package main
 
 import (
 	"example/main/proto"
+	"fmt"
+
 	pb "google.golang.org/protobuf/proto"
 )
 
@@ -13,6 +15,8 @@ func main() {
 	if err != nil {	
 		panic(err)
 	}
+
+	fmt.Println(data)
 
 	newValue := &proto.String{}
 	err = pb.Unmarshal(data, newValue)
